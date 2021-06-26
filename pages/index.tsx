@@ -13,13 +13,6 @@ export default function Home(): ReactElement {
 
 				</p>
 
-				{/*<Image*/}
-				{/*	src="/images/moon.jpg"*/}
-				{/*	width={237}*/}
-				{/*	height={237}*/}
-				{/*	alt="aQaTL"*/}
-				{/*	className={"avatar-img"}*/}
-				{/*/>*/}
 				<img
 					src="images/moon.jpg"
 					width="237"
