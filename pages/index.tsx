@@ -29,8 +29,8 @@ export default function Home(): ReactElement {
 				/>
 
 				<div className="grid">
-					<a href="https://nostalgiamap.aqatl.pl" className="card">
-						<h3>Nostalgia Map &rarr;</h3>
+					<a href="https://github.com/aQaTL" className="card">
+						<h3>GitHub &rarr;</h3>
 					</a>
 
 					<Link href="/blog">
