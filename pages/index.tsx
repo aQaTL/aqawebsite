@@ -1,6 +1,5 @@
 import React, {ReactElement} from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Home(): ReactElement {
 	return (
@@ -14,12 +13,19 @@ export default function Home(): ReactElement {
 
 				</p>
 
-				<Image
-					src="/images/moon.jpg"
-					width={237}
-					height={237}
-					alt="aQaTL"
-					className={"avatar-img"}
+				{/*<Image*/}
+				{/*	src="/images/moon.jpg"*/}
+				{/*	width={237}*/}
+				{/*	height={237}*/}
+				{/*	alt="aQaTL"*/}
+				{/*	className={"avatar-img"}*/}
+				{/*/>*/}
+				<img
+					src="images/moon.jpg"
+					width="237"
+					height="237"
+					alt="aQaTL's avatar"
+					className="avatar-img"
 				/>
 
 				<div className="grid">
@@ -110,7 +116,7 @@ export default function Home(): ReactElement {
 				.title {
 					margin: 0;
 					line-height: 1.15;
-					font-size: 4rem;
+  					font-size: clamp(3rem, -0.875rem + 8.333vw, 4rem);
 				}
 
 				.title,
