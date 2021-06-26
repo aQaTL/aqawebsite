@@ -17,3 +17,6 @@ deploy: export
 
 run:
 	npx next dev
+
+lint:
+	npm run lint
