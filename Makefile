@@ -14,3 +14,6 @@ deploy: export
 		"cd /var/www/aqawebsite && \
 			tar --extract --verbose --ungzip --file $(ARCHIVE_FILENAME) && \
 			rm $(ARCHIVE_FILENAME)"
+
+run:
+	npx next dev
