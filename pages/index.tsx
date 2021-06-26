@@ -32,12 +32,11 @@ export default function Home(): ReactElement {
 						</a>
 					</Link>
 
-					<a
-						href="https://notifier.aqatl.pl"
-						className="card"
-					>
-						<h3>RSS Notifier &rarr;</h3>
-					</a>
+					<Link href="/about">
+						<a className="card">
+							<h3>About me &rarr;</h3>
+						</a>
+					</Link>
 
 					<a
 						href="http://pi.aqatl.pl"

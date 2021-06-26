@@ -6,5 +6,8 @@ dist
 coverage
 # don't lint next.js files
 .next
+next.config.js
 # don't lint the config
 .eslintrc.js
+# don't lint next.js build output
+out
