@@ -32,8 +32,6 @@ export default class Calc extends React.Component {
 			const burntFuel = this.round(tripLength / 100.0 * fuelConsumption, 2);
 			const burntFuelCost = this.round(burntFuel * fuelPrice, 2);
 
-			console.log(burntFuel, burntFuelCost);
-
 			return {
 				burntFuel,
 				burntFuelCost,
