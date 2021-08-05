@@ -1,19 +1,38 @@
-import React, {ReactElement, useState} from "react";
+import React, {ReactElement} from "react";
 import Layout from "../components/layout";
 
+interface State {
+	tripLength: string;
+	fuelConsumption: string;
+	fuelPrice: string;
+	burntFuel: number;
+	burntFuelCost: number;
+}
+
+function parseFloatAndUnwrapNaN(float: string): number {
+	const v = parseFloat(float);
+	return isNaN(v) ? 0 : v;
+}
+
 export default class Calc extends React.Component {
-	state = {
-		tripLength: 0,
-		fuelConsumption: 0,
-		fuelPrice: 0,
+	state: State = {
+		tripLength: "",
+		fuelConsumption: "",
+		fuelPrice: "",
 		burntFuel: 0,
 		burntFuelCost: 0,
 	};
 
 	calc = (): void => {
-		this.setState((state: any) => {
-			const burntFuel = this.round(state.tripLength / 100.0 * state.fuelConsumption, 2);
-			const burntFuelCost = state.burntFuel * state.fuelPrice;
+		this.setState((state: State): any => {
+			const tripLength = parseFloatAndUnwrapNaN(state.tripLength);
+			const fuelConsumption = parseFloatAndUnwrapNaN(state.fuelConsumption);
+			const fuelPrice = parseFloatAndUnwrapNaN(state.fuelPrice);
+
+			const burntFuel = this.round(tripLength / 100.0 * fuelConsumption, 2);
+			const burntFuelCost = this.round(burntFuel * fuelPrice, 2);
+
+			console.log(burntFuel, burntFuelCost);
 
 			return {
 				burntFuel,
@@ -22,11 +41,11 @@ export default class Calc extends React.Component {
 		});
 	};
 
-	round = (num: number, decimalPlaces: number = 0): number => {
+	round(num: number, decimalPlaces = 0): number {
 		const p = Math.pow(10, decimalPlaces);
 		const n = (num * p) * (1 + Number.EPSILON);
 		return Math.round(n) / p;
-	};
+	}
 
 	render(): ReactElement {
 		return (
